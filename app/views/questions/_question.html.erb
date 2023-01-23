@@ -1,0 +1,35 @@
+<div class="mb-sm">
+  <%= question.body %>
+</div>
+
+<% if question.answer.present? %>
+  <div class="mb-sm text-dark-red">
+    <%= question.answer %>
+  </div>
+<% end %>
+
+<div class="text-sm question-footer">
+  <div class="text-grey">
+    <%= l(question.created_at, format: :short) %>
+    <% if question.author.present? %>
+    <%= link_to display_nickname(question.author), user_path(question.author), class: "mr-sm" %>
+    <% else %>
+    <span>@Аноним</span>
+    <% end %>
+  </div>
+
+  <% if question.user == current_user %>
+    <div>
+    <% edit_icon = question.answer.blank? ? 'reply' : 'pencil' %>
+    <%= link_to fa_icon(edit_icon), edit_question_path(question), 
+        title: 'Изменить вопрос', class: 'mr-sm' %>
+      <%= button_to fa_icon('trash-o'), question_path(question),
+        method: :delete, title: 'Удалить вопрос' %>
+      <% if question.hidden? %>
+        <%= button_to fa_icon('eye'), hide_question_path(question), method: :put, title: "Сделать видимым" %>
+      <% else %>
+        <%= button_to fa_icon('eye-slash'), hide_question_path(question), method: :put, title: "Сделать скрытым" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

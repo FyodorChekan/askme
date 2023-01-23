@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 class="title-lg mb">Вопрос <%= @question.id %></h2>
+  <p class="mt-sm"><%= link_to "Все вопросы @#{@question.user.nickname}", user_path(@question.user) %></p>
+
+<!--  <p class="mt"><%#= link_to "Все вопросы", questions_path %></p>-->
+</div>
+
+<div class="mt-sm container">
+  <%= render 'question', question: @question %>
+</div>
