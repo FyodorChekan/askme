@@ -37,3 +37,8 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+set :application, "askme"
+set :repo_url, "https://github.com/FyodorChekan/askme"
+set :branch, "capistrano-deploy"
+set :deploy_to, "/home/deploy/#{fetch :application}"
+append :linked_files, "config/master.key"
