@@ -14,6 +14,8 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
+gem 'gravtastic'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -38,7 +40,10 @@ gem "jbuilder"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
 
-
+gem 'capistrano',                 '3.11.2'
+gem 'capistrano-rails',           '1.4.0'
+gem 'capistrano-rbenv',           '2.1.4 '
+gem 'capistrano-passenger',       '0.2.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

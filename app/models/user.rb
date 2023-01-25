@@ -5,6 +5,9 @@ class User < ApplicationRecord
 
   before_save :downcase_nickname
 
+  include Gravtastic
+  gravtastic(secure: true, filetype: :png, size: 100, default: 'retro')
+
   validates :email,
             presence: true,
             uniqueness: true,

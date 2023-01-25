@@ -1,13 +1,17 @@
 <div class="user-box">
   <h2 class="title-lg mt-lg"><%= @user.name %></h2>
 
+  <div class="mt">
+    <%= render partial: 'users/user_avatar', locals: {user: @user} %>
+  </div>
+
+  <p class="text-bold mt-sm mb-lg">@<%= @user.nickname %></p>
+
   <% if current_user == @user %>
     <p class="mt mb-lg">
       <%= link_to fa_icon('pencil'), edit_user_path(@user) %>
     </p>
   <% end %>
-
-  <p class="text-bold mt mb-lg">@<%= @user.nickname %></p>
 </div>
 
 <% if @questions.any? %>
