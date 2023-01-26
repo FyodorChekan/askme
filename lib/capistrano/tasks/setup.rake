@@ -30,4 +30,9 @@ namespace :deploy do
               # and it may have a (R) after Passenger
               passenger_version = capture(:passenger, '-v').match(/^Phusion Passenger(\(R\))? (Enterprise )?(version )?(.*)$/)[4]
             end
+          end
+        end
+      end
+    end
+  end
 end
