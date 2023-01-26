@@ -38,5 +38,5 @@ set :application, "askme"
 set :repo_url, "git@github.com:FyodorChekan/askme.git"
 set :branch, "capistrano-deploy"
 set :deploy_to, "/home/deploy/askme"
-set :rbenv_path, '$HOME/deploy/.rbenv'
+set :rbenv_path, '/home/deploy/.rbenv'
 append :linked_files, "config/master.key"
